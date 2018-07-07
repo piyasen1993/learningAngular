@@ -1,0 +1,65 @@
+
+<form name="myfirstform" #myform="ngForm" (ngSubmit)="gettingform(myform)">
+  <input type="text" name="firstname" minlength="4" #firstname="ngModel" [(ngModel)]="first_name" placeholder="First Name" required pattern="^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$">
+  <span *ngIf="myform.submitted && firstname.touched && firstname.invalid">
+    <p *ngIf="firstname.errors.required">Please enter your first name</p>
+    <p *ngIf="firstname.errors.minlength">Please enter atleast 4 characters </p>
+    <p *ngIf="firstname.errors.pattern">Please enter atleast one number and one char</p>
+  </span>
+
+  <br>
+
+  <input type="text" name="lastname" minlength="4" #lastname="ngModel" [(ngModel)]="last_name" placeholder="Last Name" required> 
+  <span *ngIf="myform.submitted  && lastname.touched && lastname.invalid">
+    <p *ngIf="lastname.errors.required">Please enter your last name</p>
+    <p *ngIf="lastname.errors.minlength">Please enter atleast 4 characters </p>
+  </span>
+  <br>
+
+  <div ngModelGroup="address">
+    <input type="text" name="street" #streetname="ngModel" ngModel placeholder="Street Name" required>
+    <span *ngIf="streetname.touched && streetname.invalid">
+      <p *ngIf="streetname.errors.required">Please enter your street name</p>
+    </span>
+
+  </div>
+  <div ngModelGroup="dob">
+    <input type="text" name="date" #date="ngModel" ngModel placeholder="Date" required>
+    <span *ngIf="date.touched && date.invalid">
+      <p *ngIf="date.errors.required">Please enter your street name</p>
+    </span>
+
+    <br>
+
+    <input type="text" name="month" #month="ngModel" ngModel placeholder="Month" required>
+    <span *ngIf="month.touched && month.invalid">
+      <p *ngIf="month.errors.required">Please enter your street name</p>
+    </span>
+
+     <br>
+
+    <input type="text" name="year" #year="ngModel" ngModel placeholder="Year" required>
+    <span *ngIf="year.touched && year.invalid">
+      <p *ngIf="year.errors.required">Please enter your street name</p>
+    </span>
+   
+  </div>  
+  <div ngModelGroup="address">
+      <input type="text" name="postcode" #postcodeenterd="ngModel" ngModel placeholder="Postcode" required>
+      <span *ngIf="postcodeenterd.touched && postcodeenterd.invalid">
+        <p *ngIf="postcodeenterd.errors.required">Please enter your postcode</p>
+      </span>
+   </div>
+
+   <br>
+
+   <input type="file" name="profile_img" (change)="fileselected($event)">
+
+  <button type="submit">Submit</button>
+  
+</form>
+
+
+
+
+
