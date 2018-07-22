@@ -15,7 +15,39 @@ export class AppComponent {
 
   constructor(private fb:FormBuilder)
   {
-  	this.createForm();
+    this.createForm();
+    console.log('Inside Constructor');
+  }
+
+  /* Mainly use */
+  ngOnInit()
+  {
+    console.log('Inside ngOnInit');
+  }
+
+  ngAfterContentInit()
+  {
+    console.log('Inside ngAfterContentInit');
+  }
+
+  ngAfterContentChecked()
+  {
+    console.log('Inside ngAfterContentChecked');
+  }
+  /* Mainly use */
+  ngAfterViewInit()
+  {
+    console.log('Inside ngAfterViewInit');
+  }
+
+  ngAfterViewChecked()
+  {
+    console.log('Inside ngAfterViewChecked');
+  }
+  /* Mainly use */
+  ngOnDestroy()
+  {
+    console.log('Inside ngOnDestroy');
   }
 
   createForm ()
