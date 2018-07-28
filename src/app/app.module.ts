@@ -4,11 +4,15 @@ import { FormsModule , ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { FormComponent } from './form.component';
+import { NewdirectiveDirective } from './newdirective.directive';
+import { CustompipePipe } from './custompipe.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FormComponent
+    FormComponent,
+    NewdirectiveDirective,
+    CustompipePipe
   ],
   imports: [
     BrowserModule,

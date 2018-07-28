@@ -12,6 +12,10 @@ export class AppComponent {
 
   public ptaginnerhtml:string;
   public reacriveForm: FormGroup;
+  public amount:number = 0.5;
+  public date:string = new Date();
+  public status:number = 1;
+  public payment_status:number = 1;
 
   constructor(private fb:FormBuilder)
   {

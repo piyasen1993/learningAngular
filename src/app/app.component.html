@@ -1,8 +1,11 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
-  <h1>
+  <h1 appNewdirective="Welcoming you to " [passvalue]="title">
     Welcome to {{ title }}!
   </h1>
+  <h1> {{amount|currency:'inr'}}</h1>
+  <h1> {{date | date :'yyyy-MM-dd'}}</h1>
+  <h1> {{status | custompipe:payment_status}}</h1>
   <img width="300" alt="Angular Logo" [src]="src"> <!--Poperty Binding-->
 </div>
 <button (click)="showconsole()">Click Me</button> <!--Event Binding-->
