@@ -13,6 +13,9 @@ export class FormComponent {
   }
   public first_name:string = this.cmnsrvc.value.first_name;
   public last_name:string = this.cmnsrvc.value.last_name;
+  // public emailid:string = this.cmnsrvc.value.emailid;
+  public address:string = this.cmnsrvc.value.address;
+  
   public street_name:string = this.cmnsrvc.value.street_name;
   public dateb:string = this.cmnsrvc.value.dateb;
   public monthb:string = this.cmnsrvc.value.monthb;
