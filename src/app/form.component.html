@@ -1,37 +1,3 @@
-
-<form name="myfirstform" #myform="ngForm" (ngSubmit)="gettingform(myform)">
-  <input type="text" name="firstname" minlength="4" #firstname="ngModel" [(ngModel)]="first_name" placeholder="First Name" required
-   pattern="^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$">
-  <span *ngIf="myform.submitted && firstname.touched && firstname.invalid">
-    <p *ngIf="firstname.errors.required">Please enter your first name</p>
-    <p *ngIf="firstname.errors.minlength">Please enter atleast 4 characters </p>
-    <p *ngIf="firstname.errors.pattern">Please enter atleast one number and one char</p>
-  </span>
-
-  <br>
-
-  <input type="text" name="lastname" minlength="4" #lastname="ngModel" [(ngModel)]="last_name" placeholder="Last Name" required> 
-  <span *ngIf="myform.submitted  && lastname.touched && lastname.invalid">
-    <p *ngIf="lastname.errors.required">Please enter your last name</p>
-    <p *ngIf="lastname.errors.minlength">Please enter atleast 4 characters </p>
-  </span>
-  <br>
-
-  <input type="text" name="eailid" minlength="4" #emailId="ngModel" [(ngModel)]="emailid" placeholder="Email Id" required> 
-  <span *ngIf="myform.submitted  && emailId.touched && emailId.invalid">
-    <p *ngIf="emailId.errors.required">Please enter your last name</p>
-    <p *ngIf="emailId.errors.minlength">Please enter atleast 4 characters </p>
-  </span>
-  <br>
-
-
-  <div ngModelGroup="address">
-    <input type="text" name="street" #streetname="ngModel" [(ngModel)]="street_name" placeholder="Street Name" required>
-    <span *ngIf="streetname.touched && streetname.invalid">
-      <p *ngIf="streetname.errors.required">Please enter your street name</p>
-    </span>
-  </div>
-
 <div class="container">
   <div class="row">
     <div class="col-md-12">
@@ -83,18 +49,6 @@
     </div>
     </div>
     <br>
-
-    <input type="text" name="month" #month="ngModel" ngModel placeholder="Month" required>
-    <span *ngIf="month.touched && month.invalid">
-      <p *ngIf="month.errors.required">Please enter your street name</p>
-    </span>
-
-     <br>
-
-    <input type="text" name="year" #year="ngModel" ngModel placeholder="Year" required>
-    <span *ngIf="year.touched && year.invalid">
-      <p *ngIf="year.errors.required">Please enter your street name</p>
-    </span>
     <div class="form-group">
       <label class="control-label col-sm-2" for="month">Month:</label>
       <div class="col-sm-10">
@@ -116,7 +70,6 @@
     </div>
   </div>
   </div>  
-
   <div ngModelGroup="address">
     <div class="form-group">
       <label class="control-label col-sm-2" for="pin">PIN:</label>
@@ -139,7 +92,7 @@
     </div>
     <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
-      <button type="submit" class="btn btn-default" [disabled]="myform.invalid || errorfile">Submit</button>
+      <button type="submit" class="btn btn-default">Submit</button>
     </div>
     </div>
       </form>
@@ -147,6 +100,25 @@
     </div>
   </div>
 </div>
+
+<input type="text" name="cntry" [(ngModel)] = "country" placeholder="Postcode" required>
+
+<div [ngSwitch]="country">
+  <div *ngSwitchCase="'india'">
+    India
+  </div>
+  <div *ngSwitchCase="'usa'">
+    USA
+  </div>
+</div>
+
+<ng-template>
+  Inside template
+</ng-template>
+
+<ng-container>
+  Inside Content
+</ng-container>
 
                 
             

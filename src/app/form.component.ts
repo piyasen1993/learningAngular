@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { CommonService } from './service';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'form-element',
@@ -8,8 +9,8 @@ import { CommonService } from './service';
 })
 export class FormComponent {
 
-  constructor(private cmnsrvc:CommonService){
-    console.log(this.cmnsrvc.value);
+  constructor(private cmnsrvc:CommonService , private router: Router){
+    console.log(this.cmnsrvc);
   }
   public first_name:string = this.cmnsrvc.value.first_name;
   public last_name:string = this.cmnsrvc.value.last_name;
@@ -27,7 +28,7 @@ export class FormComponent {
   gettingform(form)
 
   {
-
+    this.router.navigate(['/test']);
     if(form.valid)
       console.log(form.value);
       this.cmnsrvc.value = form.value;
