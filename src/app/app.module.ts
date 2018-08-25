@@ -9,13 +9,17 @@ import { NewdirectiveDirective } from './newdirective.directive';
 import { CustompipePipe } from './custompipe.pipe';
 import { DivdirectiveDirective } from './divdirective.directive';
 import { RouterModule, Routes } from '@angular/router';
+import { HomePageComponent } from './pages/home-page/home-page.component';
+import { LoginComponent } from './pages/login/login.component';
 
 const appRoutes: Routes = [
   //{ path: 'landing', component: AppComponent },
   { path: 'form', component: FormComponent },
-  { path: 'test', component: TestrouteComponent},
-  { path: '',   redirectTo: '/form', pathMatch: 'full' },
-  { path: '**', component: FormComponent }
+  { path: 'test/:id', component: TestrouteComponent},
+  { path: 'home/:id/:usertype', component: HomePageComponent},
+  { path: 'login', loadChildren: 'app/pages/login/login.module#LoginModule' },
+  { path: '',  component: LoginComponent },
+  { path: '**', redirectTo: '/login', pathMatch: 'full' }
 ];
 
 @NgModule({
@@ -25,7 +29,9 @@ const appRoutes: Routes = [
     NewdirectiveDirective,
     DivdirectiveDirective,
     CustompipePipe,
-    TestrouteComponent
+    TestrouteComponent,
+    HomePageComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

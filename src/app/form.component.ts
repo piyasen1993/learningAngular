@@ -25,6 +25,7 @@ export class FormComponent {
   public errorfile:boolean = false;
   public types:any = ['png','jpg','jpeg'];
   public country:string = 'india';
+  
   gettingform(form)
 
   {
