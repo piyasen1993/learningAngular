@@ -17,7 +17,7 @@ const appRoutes: Routes = [
   { path: 'form', component: FormComponent },
   { path: 'test/:id', component: TestrouteComponent},
   { path: 'home/:id/:usertype', component: HomePageComponent},
-  { path: 'login', loadChildren: 'app/pages/login/login.module#LoginModule' },
+  { path: 'login', component: LoginComponent },
   { path: '',  component: LoginComponent },
   { path: '**', redirectTo: '/login', pathMatch: 'full' }
 ];
