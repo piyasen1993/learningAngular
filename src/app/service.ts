@@ -4,9 +4,20 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class CommonService {
-  public value:any = {"first_name":"Jit","last_name":"Dhar","address":"sector V"};
+	public value:any = [];
+	
 
-  constructor(){}
+  constructor(){
+
+  	if(localStorage.getItem("usearr"))
+	{
+		this.value = JSON.parse(localStorage.getItem("usearr"));
+	}
+	else
+	{
+		this.value = [{"first_name":"Arijita5","last_name":"Rudra","username":"Arijita5","password":"123456","movie":[]}];
+	}
+  }
 
  
 }

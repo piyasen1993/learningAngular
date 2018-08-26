@@ -4,28 +4,37 @@
     <div class="form_main">
       <form name="loginForm" #myform="ngForm" (ngSubmit)="gettingform(myform)" class="form-horizontal">
         <div class="form-group">
-          <label class="control-label col-sm-2" for="firstname">First Name:</label>
+          <label class="control-label col-sm-2" for="username">User Name:</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" name="firstName" minlength="4" #firstName="ngModel" [(ngModel)]="first_name" placeholder="First Name" required pattern="^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$">
-
-            <span *ngIf="myform.submitted && firstName.invalid">
-              <p *ngIf="firstName.errors.required">Please enter your first name</p>
-              <p *ngIf="firstName.errors.minlength">Please enter atleast 4 characters </p>
-              <p *ngIf="firstName.errors.pattern">Please enter atleast one number and one char</p>
+            <input type="text" class="form-control" name="username" minlength="3" #usrname="ngModel" ngModel="" placeholder="First Name" required>
+            
+            <span *ngIf="myform.submitted && usrname.invalid">
+              <p *ngIf="usrname.errors.required">Please enter your user name</p>
+              <p *ngIf="usrname.errors.minlength">Please enter atleast 3 characters </p>
             </span>
           </div>
         </div>
-      
+       
         <!-- <div class="form-group">
           <label class="control-label col-sm-2" for="lastname">Last Name:</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" name="lastname" minlength="4" #last_name="ngModel" [(ngModel)]="last_name" placeholder="Last Name" required> 
-            <span *ngIf="myLoginform.submitted && last_name.invalid">
-              <p *ngIf="last_name.errors.required">Please enter your last name</p>
-              <p *ngIf="last_name.errors.minlength">Please enter atleast 4 characters </p>
+            <input type="text" class="form-control" name="lastname" minlength="4" #lastname="ngModel" ngModel="" placeholder="Last Name" required> 
+            <span *ngIf="myform.submitted && lastname.invalid">
+              <p *ngIf="lastname.errors.required">Please enter your last name</p>
+              <p *ngIf="lastname.errors.minlength">Please enter atleast 4 characters </p>
             </span>
           </div>
         </div> -->
+       <div class="form-group">
+          <label class="control-label col-sm-2" for="password">Password:</label>
+          <div class="col-sm-10">
+            <input type="password" class="form-control" name="password" #pass="ngModel" ngModel="" placeholder="Password" required pattern="^(?=.*\d).{4,8}$"> 
+            <span *ngIf="myform.submitted && pass.invalid">
+              <p *ngIf="pass.errors.required">Please enter your password!</p>
+              <p *ngIf="pass.errors.pattern"> Password must be between 4 and 8 digits long and include at least one numeric digit.</p>
+            </span>
+          </div>
+        </div>
       
 	    <div class="form-group">
 		    <div class="col-sm-offset-2 col-sm-10">

@@ -15,11 +15,11 @@ import { LoginComponent } from './pages/login/login.component';
 const appRoutes: Routes = [
   //{ path: 'landing', component: AppComponent },
   { path: 'form', component: FormComponent },
-  { path: 'test', component: TestrouteComponent},
-  { path: 'home/:user', component: HomePageComponent},
+  { path: 'test/:id', component: TestrouteComponent},
+  { path: 'home/:id/:usertype', component: HomePageComponent},
   { path: 'login', component: LoginComponent },
-  { path: '',  component: FormComponent },
-  { path: '**', redirectTo: '/form', pathMatch: 'full' }
+  { path: '',  component: LoginComponent },
+  { path: '**', redirectTo: '/login', pathMatch: 'full' }
 ];
 
 @NgModule({
