@@ -11,16 +11,9 @@ import { DivdirectiveDirective } from './divdirective.directive';
 import { RouterModule, Routes } from '@angular/router';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { LoginComponent } from './pages/login/login.component';
+import { AppRoutingModule }     from './app.routing.module';
 
-const appRoutes: Routes = [
-  //{ path: 'landing', component: AppComponent },
-  { path: 'form', component: FormComponent },
-  { path: 'test', component: TestrouteComponent},
-  { path: 'home/:user', component: HomePageComponent},
-  { path: 'login', component: LoginComponent },
-  { path: '',  component: FormComponent },
-  { path: '**', redirectTo: '/form', pathMatch: 'full' }
-];
+
 
 @NgModule({
   declarations: [
@@ -37,10 +30,7 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(
-      appRoutes,
-      { enableTracing: false } // <-- debugging purposes only
-    )
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

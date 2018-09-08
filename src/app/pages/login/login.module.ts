@@ -1,12 +1,8 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login.component';
-
-const appRoutes: Routes = [
-  { path: '', component: LoginComponent }
-];
+import { LoginRoutingModule } from './login.routing';
 
 @NgModule({
   declarations: [
@@ -15,10 +11,7 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(
-      appRoutes,
-      { enableTracing: false } // <-- debugging purposes only
-    )
+    LoginRoutingModule
   ],
   providers: []
 })
