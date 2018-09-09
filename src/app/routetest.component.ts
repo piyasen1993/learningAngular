@@ -17,17 +17,29 @@ export class TestrouteComponent {
   public date:any = new Date();
   public status:number = 1;
   public payment_status:number = 1;
+  public dummydata:any;
 
-  constructor(private fb:FormBuilder)
+  constructor(private fb:FormBuilder,private cmnsrvc : CommonService)
   {
     this.createForm();
     //console.log('Inside Constructor');
+  }
+
+  getDataDummyApi(): void {
+    this.cmnsrvc.getDataDummyApi()
+    .subscribe(dummydatafromapi => {this.dummydata = dummydatafromapi;console.log(this.dummydata)});
+  }
+
+  postDummyDataApi(): void {
+    this.cmnsrvc.postDataDummyApi({title: 'foo',body: 'bar',userId: 1})
+    .subscribe(postdummydatafromapi => {console.log(postdummydatafromapi)});
   }
 
   /* Mainly use */
   ngOnInit()
   {
     //console.log('Inside ngOnInit');
+    this.getDataDummyApi();
   }
 
   ngAfterContentInit()

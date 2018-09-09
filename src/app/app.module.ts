@@ -12,6 +12,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { LoginComponent } from './pages/login/login.component';
 import { AppRoutingModule }     from './app.routing.module';
+/* For Calling Api Service */
+import { HttpClientModule }    from '@angular/common/http';
 
 
 
@@ -30,7 +32,8 @@ import { AppRoutingModule }     from './app.routing.module';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -13,6 +13,7 @@ export class HomePageComponent implements OnInit {
  public name:any;
  public routeparams:any = {};
  public movieArr:any = [];
+ public dummydata:any;
   constructor(private route:ActivatedRoute, private cmnsrvc:CommonService) { 
   	//console.log(this.route.params.value.username)
   	//console.log(this.route.queryParams.value)
@@ -29,6 +30,8 @@ export class HomePageComponent implements OnInit {
   showmovieform(){
     console.log('Click Me');
   }
+
+ 
 
   gettingmovieform(form)
   {
