@@ -14,7 +14,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { AppRoutingModule }     from './app.routing.module';
 /* For Calling Api Service */
 import { HttpClientModule }    from '@angular/common/http';
-
+import { httpInterceptorProviders } from './http-interceptor'
 
 
 @NgModule({
@@ -35,7 +35,7 @@ import { HttpClientModule }    from '@angular/common/http';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
